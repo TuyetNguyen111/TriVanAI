@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhân Vật Văn Học Việt Nam</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 20px 0;
+        }
+        .story-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+        .story-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+        .story-info {
+            padding: 1.5rem;
+        }
+        .story-title {
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+            color: #2c3e50;
+        }
+        .story-description {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .characters-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .characters-list li {
+            margin: 0.5rem 0;
+        }
+        .characters-list a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .characters-list a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nhân Vật Văn Học Việt Nam</h1>
+        <p>Khám phá các nhân vật trong truyện cổ tích Việt Nam</p>
+    </header>
+
+    <div class="container">
+        <div class="stories-grid">
+            <!-- Sơn Tinh Thuỷ Tinh -->
+            <div class="story-card">
+                <img src="images/son-tinh-thuy-tinh.jpg" alt="Sơn Tinh Thuỷ Tinh" class="story-image">
+                <div class="story-info">
+                    <h2 class="story-title">Sơn Tinh Thuỷ Tinh</h2>
+                    <p class="story-description">
+                        Câu chuyện về tình yêu và sự đối đầu giữa hai vị thần núi và biển.
+                    </p>
+                    <ul class="characters-list">
+                        <li><a href="son-tinh.html">Sơn Tinh</a></li>
+                        <li><a href="thuy-tinh.html">Thuỷ Tinh</a></li>
+                        <li><a href="vua-hung.html">Vua Hùng</a></li>
+                        <li><a href="mi-nuong.html">Mị Nương</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Thánh Gióng -->
+            <div class="story-card">
+                <img src="images/thanh-giong.jpg" alt="Thánh Gióng" class="story-image">
+                <div class="story-info">
+                    <h2 class="story-title">Thánh Gióng</h2>
+                    <p class="story-description">
+                        Câu chuyện về người anh hùng dân tộc đánh giặc Ân cứu nước.
+                    </p>
+                    <ul class="characters-list">
+                        <li><a href="thanh-giong.html">Thánh Gióng</a></li>
+                        <li><a href="me-giong.html">Mẹ Gióng</a></li>
+                        <li><a href="vua-hung-giong.html">Vua Hùng</a></li>
+                        <li><a href="giac-an.html">Giặc Ân</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bánh Chưng Bánh Giầy -->
+            <div class="story-card">
+                <img src="images/banh-chung-banh-giay.jpg" alt="Bánh Chưng Bánh Giầy" class="story-image">
+                <div class="story-info">
+                    <h2 class="story-title">Bánh Chưng Bánh Giầy</h2>
+                    <p class="story-description">
+                        Câu chuyện về nguồn gốc bánh chưng bánh giầy và sự thông minh của Lang Liêu.
+                    </p>
+                    <ul class="characters-list">
+                        <li><a href="lang-lieu.html">Lang Liêu</a></li>
+                        <li><a href="vua-hung-banh.html">Vua Hùng</a></li>
+                        <li><a href="than-nong.html">Thần Nông</a></li>
+                        <li><a href="cac-hoang-tu.html">Các Hoàng Tử</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Tác Giả Văn Học Việt Nam</h2>
+        <div class="stories-grid">
+            <!-- Trần Đăng Khoa -->
+            <div class="story-card">
+                <img src="images/tran-dang-khoa.jpg" alt="Trần Đăng Khoa" class="story-image">
+                <div class="story-info">
+                    <h2 class="story-title">Trần Đăng Khoa</h2>
+                    <p class="story-description">
+                        Nhà thơ thần đồng với những vần thơ trong sáng, hồn nhiên về thiên nhiên và cuộc sống.
+                    </p>
+                    <ul class="characters-list">
+                        <li><a href="tran-dang-khoa.html">Trò chuyện với Trần Đăng Khoa</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Xuân Quỳnh -->
+            <div class="story-card">
+                <img src="images/xuan-quynh.jpg" alt="Xuân Quỳnh" class="story-image">
+                <div class="story-info">
+                    <h2 class="story-title">Xuân Quỳnh</h2>
+                    <p class="story-description">
+                        Nữ thi sĩ với những vần thơ tình yêu tha thiết, sâu lắng và đầy cảm xúc.
+                    </p>
+                    <ul class="characters-list">
+                        <li><a href="xuan-quynh.html">Trò chuyện với Xuân Quỳnh</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tô Hoài -->
+            <div class="story-card">
+                <img src="images/to-hoai.jpg" alt="Tô Hoài" class="story-image">
+                <div class="story-info">
+                    <h2 class="story-title">Tô Hoài</h2>
+                    <p class="story-description">
+                        Nhà văn với những tác phẩm văn học thiếu nhi nổi tiếng và sâu sắc.
+                    </p>
+                    <ul class="characters-list">
+                        <li><a href="to-hoai.html">Trò chuyện với Tô Hoài</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

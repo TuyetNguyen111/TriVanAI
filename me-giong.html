@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mẹ Gióng - Truyện Cổ Tích Việt Nam</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .character-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .character-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .chat-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+        .character-message {
+            background-color: #e9ecef;
+            color: black;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #send-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #send-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mẹ Gióng</h1>
+        <p>Người mẹ hiền lành của Thánh Gióng</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">Quay lại</a>
+
+        <div class="character-info">
+            <img src="images/me-giong-character.jpg" alt="Mẹ Gióng" class="character-image">
+            <h2>Thông tin nhân vật</h2>
+            <p>Mẹ Gióng là một người phụ nữ nông dân hiền lành, chăm chỉ. Bà là biểu tượng của tình mẫu tử 
+            thiêng liêng và sự hy sinh thầm lặng của người mẹ Việt Nam.</p>
+            <p>Trong truyện, Mẹ Gióng đã trải qua nhiều sự kiện quan trọng:</p>
+            <ul>
+                <li>Là một người phụ nữ nông dân hiền lành</li>
+                <li>Đi làm đồng và nhặt được vết chân lạ</li>
+                <li>Mang thai và sinh ra Thánh Gióng</li>
+                <li>Chăm sóc con trai ba tuổi chưa biết nói</li>
+                <li>Chứng kiến con trai vụt lớn để đánh giặc</li>
+                <li>Tiễn con trai bay về trời</li>
+            </ul>
+        </div>
+
+        <div class="chat-container">
+            <h2>Trò chuyện với Mẹ Gióng</h2>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message character-message">
+                    Xin chào! Tôi là mẹ của Thánh Gióng. Bạn muốn trò chuyện gì với tôi?
+                </div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Nhập tin nhắn của bạn...">
+                <button id="send-btn">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const responses = [
+            "Tôi là mẹ của Thánh Gióng, một người phụ nữ nông dân. Tôi rất tự hào về con trai mình.",
+            "Khi đi làm đồng, tôi đã nhặt được vết chân lạ. Đó là dấu hiệu báo trước sự ra đời của con tôi.",
+            "Con trai tôi là một đứa trẻ đặc biệt. Ba tuổi vẫn chưa biết nói, biết cười, nhưng tôi vẫn yêu thương con hết mực.",
+            "Tôi rất tự hào khi chứng kiến con vụt lớn để đánh giặc. Đó là sứ mệnh thiêng liêng của con.",
+            "Tôi đã chăm sóc con từ khi còn nhỏ. Mỗi ngày tôi đều cầu nguyện cho con được bình an.",
+            "Tôi sẽ luôn ủng hộ con trong mọi việc. Dù con có bay về trời, tình mẫu tử vẫn mãi thiêng liêng.",
+            "Tôi rất yêu thương con trai mình. Con là niềm tự hào của cả gia đình và dân tộc.",
+            "Khi con vụt lớn để đánh giặc, tôi vừa vui mừng vừa lo lắng. Nhưng tôi tin con sẽ chiến thắng.",
+            "Tôi rất buồn khi phải tiễn con bay về trời. Nhưng tôi hiểu đó là sứ mệnh của con.",
+            "Tôi luôn cầu nguyện cho con được bình an. Tình yêu của mẹ sẽ theo con đến muôn đời."
+        ];
+
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-btn');
+        const chatMessages = document.getElementById('chat-messages');
+
+        function addMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                messageInput.value = '';
+                
+                setTimeout(() => {
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse, 'character');
+                }, 1000);
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html> 

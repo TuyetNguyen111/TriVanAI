@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trần Đăng Khoa - Nhà Thơ Thần Đồng</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .author-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .author-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .chat-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+        .author-message {
+            background-color: #e9ecef;
+            color: black;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #send-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #send-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trần Đăng Khoa</h1>
+        <p>Nhà thơ thần đồng với những vần thơ trong sáng, hồn nhiên</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">Quay lại</a>
+
+        <div class="author-info">
+            <img src="images/tran-dang-khoa.jpg" alt="Trần Đăng Khoa" class="author-image">
+            <h2>Thông tin tác giả</h2>
+            <p>Trần Đăng Khoa (sinh năm 1958) là một nhà thơ thần đồng nổi tiếng của Việt Nam. 
+            Ông bắt đầu sáng tác thơ từ khi còn rất nhỏ và được mệnh danh là "thần đồng thơ ca".</p>
+            <p>Những tác phẩm nổi tiếng:</p>
+            <ul>
+                <li>Từ góc sân nhà em (1968)</li>
+                <li>Góc sân và khoảng trời (1973)</li>
+                <li>Khúc hát người anh hùng (1974)</li>
+                <li>Bên cửa sổ máy bay (1975)</li>
+                <li>Chân dung và đối thoại (1998)</li>
+            </ul>
+        </div>
+
+        <div class="chat-container">
+            <h2>Trò chuyện với Trần Đăng Khoa</h2>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message author-message">
+                    Xin chào! Tôi là Trần Đăng Khoa. Bạn muốn trò chuyện gì với tôi?
+                </div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Nhập tin nhắn của bạn...">
+                <button id="send-btn">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const responses = [
+            "Thơ ca là tiếng nói của tâm hồn. Tôi viết thơ để bày tỏ tình yêu với thiên nhiên và cuộc sống.",
+            "Từ góc sân nhà em là tập thơ đầu tiên của tôi. Đó là nơi tôi bắt đầu hành trình sáng tác.",
+            "Tôi yêu thiên nhiên và cuộc sống. Đó là nguồn cảm hứng vô tận cho thơ ca của tôi.",
+            "Thơ ca giúp tôi kết nối với mọi người. Đó là cách tôi chia sẻ cảm xúc và suy nghĩ của mình.",
+            "Tôi luôn tìm kiếm cái đẹp trong cuộc sống. Đó là cách tôi viết nên những vần thơ.",
+            "Thơ ca là người bạn thân thiết của tôi. Nó giúp tôi hiểu hơn về cuộc sống.",
+            "Tôi yêu cách thiên nhiên kể chuyện. Đó là nguồn cảm hứng cho thơ ca của tôi.",
+            "Thơ ca giúp tôi gìn giữ ký ức tuổi thơ. Đó là kho báu quý giá của tôi.",
+            "Tôi luôn cố gắng viết những vần thơ trong sáng, hồn nhiên. Đó là phong cách của tôi.",
+            "Thơ ca là cách tôi kết nối với thế giới. Đó là ngôn ngữ của tâm hồn."
+        ];
+
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-btn');
+        const chatMessages = document.getElementById('chat-messages');
+
+        function addMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                messageInput.value = '';
+                
+                setTimeout(() => {
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse, 'author');
+                }, 1000);
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html> 

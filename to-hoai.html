@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tô Hoài - Nhà Văn Thiếu Nhi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .author-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .author-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .chat-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+        .author-message {
+            background-color: #e9ecef;
+            color: black;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #send-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #send-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tô Hoài</h1>
+        <p>Nhà văn với những tác phẩm văn học thiếu nhi nổi tiếng</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">Quay lại</a>
+
+        <div class="author-info">
+            <img src="images/to-hoai.jpg" alt="Tô Hoài" class="author-image">
+            <h2>Thông tin tác giả</h2>
+            <p>Tô Hoài (1920-2014) là một nhà văn nổi tiếng của Việt Nam, đặc biệt với các tác phẩm văn học thiếu nhi. 
+            Ông có phong cách viết giản dị, gần gũi và đầy tính nhân văn.</p>
+            <p>Những tác phẩm nổi tiếng:</p>
+            <ul>
+                <li>Dế Mèn phiêu lưu ký (1941)</li>
+                <li>O chuột (1942)</li>
+                <li>Vợ chồng A Phủ (1953)</li>
+                <li>Miền Tây (1967)</li>
+                <li>Ba người khác (2006)</li>
+                <li>Cát bụi chân ai (1992)</li>
+            </ul>
+        </div>
+
+        <div class="chat-container">
+            <h2>Trò chuyện với Tô Hoài</h2>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message author-message">
+                    Xin chào! Tôi là Tô Hoài. Bạn muốn trò chuyện gì với tôi?
+                </div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Nhập tin nhắn của bạn...">
+                <button id="send-btn">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const responses = [
+            "Văn học thiếu nhi là một phần quan trọng trong sự nghiệp sáng tác của tôi. Tôi muốn viết những câu chuyện gần gũi với trẻ thơ.",
+            "Dế Mèn phiêu lưu ký là tác phẩm tôi yêu thích nhất. Đó là câu chuyện về tình bạn và sự trưởng thành.",
+            "Tôi luôn cố gắng viết những câu chuyện giản dị, dễ hiểu. Đó là cách tôi kết nối với độc giả.",
+            "Văn học giúp tôi hiểu hơn về cuộc sống. Đó là hành trình khám phá thế giới.",
+            "Tôi yêu cách văn học kể chuyện về con người. Đó là cách tôi chia sẻ những trải nghiệm.",
+            "Văn học thiếu nhi giúp tôi giữ được tâm hồn trong sáng. Đó là nguồn cảm hứng vô tận.",
+            "Tôi luôn tìm kiếm cái đẹp trong cuộc sống. Đó là cách tôi viết nên những câu chuyện.",
+            "Văn học là cách tôi kết nối với thế hệ trẻ. Đó là sứ mệnh của người viết.",
+            "Tôi yêu cách văn học giáo dục trẻ thơ. Đó là cách tôi đóng góp cho xã hội.",
+            "Văn học giúp tôi gìn giữ ký ức tuổi thơ. Đó là kho báu quý giá của tôi."
+        ];
+
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-btn');
+        const chatMessages = document.getElementById('chat-messages');
+
+        function addMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                messageInput.value = '';
+                
+                setTimeout(() => {
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse, 'author');
+                }, 1000);
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html> 

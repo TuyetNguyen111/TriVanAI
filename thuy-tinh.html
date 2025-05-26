@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuỷ Tinh - Sơn Tinh Thuỷ Tinh</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .character-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .character-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .chat-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+        .character-message {
+            background-color: #e9ecef;
+            color: black;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #send-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #send-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Thuỷ Tinh</h1>
+        <p>Chúa tể của biển cả trong truyện cổ tích Sơn Tinh Thuỷ Tinh</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">Quay lại</a>
+
+        <div class="character-info">
+            <img src="https://via.placeholder.com/400x200" alt="Thuỷ Tinh" class="character-image">
+            <h2>Thông tin nhân vật</h2>
+            <p>Thuỷ Tinh là chúa tể của biển cả, người có phép thuật điều khiển nước. Ông là biểu tượng của 
+            sức mạnh nước, đại diện cho sự dữ dội và kiên trì trong tình yêu.</p>
+            <p>Trong truyện, Thuỷ Tinh đã trải qua nhiều sự kiện quan trọng:</p>
+            <ul>
+                <li>Đến cầu hôn Mị Nương</li>
+                <li>Đến muộn và không được chọn làm rể</li>
+                <li>Nổi giận và gây ra nạn lụt</li>
+                <li>Đối đầu với Sơn Tinh</li>
+                <li>Hàng năm vẫn gây lụt để đòi Mị Nương</li>
+            </ul>
+        </div>
+
+        <div class="chat-container">
+            <h2>Trò chuyện với Thuỷ Tinh</h2>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message character-message">
+                    Xin chào! Ta là Thuỷ Tinh, chúa tể của biển cả. Ngươi muốn trò chuyện gì với ta?
+                </div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Nhập tin nhắn của bạn...">
+                <button id="send-btn">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const responses = [
+            "Ta là Thuỷ Tinh, chúa tể của biển cả!",
+            "Nước là sức mạnh của ta, là quyền năng của ta.",
+            "Mị Nương phải là vợ của ta!",
+            "Sơn Tinh kia, hãy trả lại Mị Nương cho ta!",
+            "Biển cả sẽ dâng cao, nhấn chìm tất cả!",
+            "Ta sẽ không từ bỏ Mị Nương!",
+            "Nước là sự sống, là sức mạnh vô biên!",
+            "Ta sẽ đòi lại Mị Nương bằng mọi giá!",
+            "Biển cả sẽ trả thù cho ta!",
+            "Ta sẽ không để Sơn Tinh chiến thắng!"
+        ];
+
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-btn');
+        const chatMessages = document.getElementById('chat-messages');
+
+        function addMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                messageInput.value = '';
+                
+                setTimeout(() => {
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse, 'character');
+                }, 1000);
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html> 
